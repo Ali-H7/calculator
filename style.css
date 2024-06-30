@@ -9,7 +9,6 @@
     body {
         font-family: Montserrat, Arial, Helvetica, sans-serif;
         background-color: #EDEDED;
-        
     }
 
 .main-container {
@@ -91,5 +90,9 @@ button:last-child:hover {
 }
 
 .zero-btn {
+    width: 172px;
+}
+
+.ac-btn {
     width: 172px;
 }

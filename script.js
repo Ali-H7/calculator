@@ -1,4 +1,5 @@
 getTheFirstNum()
+getTheOperator()
 
 function add(add1, add2) {
     return add1 + add2;
@@ -36,6 +37,7 @@ function display() {
     let display = document.querySelector(".display"); 
     display.textContent = `${num1}${operator}${num2}`;
 }
+
 function getTheFirstNum() {
     const numberBtns = document.querySelectorAll(".numbers"); 
     numberBtns.forEach(numberBtn => {
@@ -45,6 +47,25 @@ function getTheFirstNum() {
                 display()
             } else {
                 num1 = e.target.innerText;
+                display()
+            }
+        });
+    })
+}
+
+function getTheOperator() {
+    const operatorBtns = document.querySelectorAll(".operators"); 
+    operatorBtns.forEach(operatorbtn => {
+        operatorbtn.addEventListener("click", e => {
+            if (num1 == "") {
+                operator = ""
+                display()
+            } else if (!operator == "") {
+                operator = ""
+                operator = e.target.innerText
+                display()
+            } else {
+                operator = e.target.innerText
                 display()
             }
         });

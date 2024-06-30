@@ -1,5 +1,6 @@
 getTheNumbers()
 getTheOperator()
+calculate()
 
 function add(add1, add2) {
     return add1 + add2;
@@ -79,3 +80,29 @@ function getTheOperator() {
     })
 }
 
+function calculate() {
+    const calcBtn = document.querySelector(".calculate")
+    calcBtn.addEventListener("click", e => {
+        num1 = +num1;
+        num2 = +num2;
+        if (operator == "×") {
+            num1 = multiply(num1, num2);
+            displayResult();
+        } else if (operator == "+") {
+            num1 = add(num1, num2);
+            displayResult();
+        } else if (operator == "−") {
+            num1 = subtract(num1, num2);
+            displayResult();
+        } else {
+            num1 = divide(num1, num2);
+            displayResult();
+        }
+    })
+}
+
+function displayResult(){
+    num2 = ""
+    operator = "";
+    display();
+}

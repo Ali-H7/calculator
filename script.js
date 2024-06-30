@@ -1,6 +1,8 @@
 getTheNumbers()
 getTheOperator()
 calculate()
+allClear()
+deleteBtn()
 
 function add(add1, add2) {
     return add1 + add2;
@@ -106,3 +108,32 @@ function displayResult(){
     operator = "";
     display();
 }
+
+function allClear() {
+    clearBtn = document.querySelector(".ac-btn");
+    clearBtn.addEventListener("click", () => {
+        num1 = "";
+        num2 = "";
+        operator = "";
+        display();
+    })
+}
+
+function deleteBtn() {
+    deleteBtn = document.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", () => {
+        if (!num1 == "" && !operator == "" && !num2 == "") {
+            num2 = num2.slice(0, -1);
+            display();
+        } else if (!num1 == "" && !operator == ""){
+            operator = "";
+            display();
+        } else {
+            num1 = num1.slice(0, -1);
+            display();
+        }
+        
+    })
+}
+
+

@@ -1,4 +1,4 @@
-getTheFirstNum()
+getTheNumbers()
 getTheOperator()
 
 function add(add1, add2) {
@@ -38,15 +38,22 @@ function display() {
     display.textContent = `${num1}${operator}${num2}`;
 }
 
-function getTheFirstNum() {
+function getTheNumbers() {
     const numberBtns = document.querySelectorAll(".numbers"); 
     numberBtns.forEach(numberBtn => {
         numberBtn.addEventListener("click", e => {
-            if (!num1 == "") {
+            if (!num1 == "" && operator == "") {
                 num1 += e.target.innerText;
                 display()
-            } else {
+            } else if (operator == ""){
                 num1 = e.target.innerText;
+                display()
+            }
+            if (!operator == "" && num2 == "") {
+                num2 = e.target.innerText;
+                display()
+            } else if (!operator == "" && !num2 == "") {
+                num2 += e.target.innerText;
                 display()
             }
         });

@@ -1,3 +1,5 @@
+getTheFirstNum()
+
 function add(add1, add2) {
     return add1 + add2;
 }
@@ -14,9 +16,9 @@ function divide(div1, div2) {
     return div1 / div2;
 }
 
-let num1; 
-let num2; 
-let operator; 
+let num1 = ""
+let num2 = ""
+let operator = ""
 
 function operate(num1 ,num2, operator) {
     if (operator == add) {
@@ -28,5 +30,24 @@ function operate(num1 ,num2, operator) {
     } else if (operator == divide) {
         divide(num1, num2)
     }
+}
+
+function display() {
+    let display = document.querySelector(".display"); 
+    display.textContent = `${num1}${operator}${num2}`;
+}
+function getTheFirstNum() {
+    const numberBtns = document.querySelectorAll(".numbers"); 
+    numberBtns.forEach(numberBtn => {
+        numberBtn.addEventListener("click", e => {
+            if (!num1 == "") {
+                num1 += e.target.innerText;
+                display()
+            } else {
+                num1 = e.target.innerText;
+                display()
+            }
+        });
+    })
 }
 
